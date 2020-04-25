@@ -13,5 +13,7 @@ UCLASS()
 class SHOOTERSAMPLE_API AShooterSampleGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+	virtual void StartPlay() override;
 	
 };

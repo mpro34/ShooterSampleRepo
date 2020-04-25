@@ -2,4 +2,15 @@
 
 
 #include "ShooterSampleGameModeBase.h"
+#include "ShooterSample.h"
+#include "Engine.h"
 
+void AShooterSampleGameModeBase::StartPlay()
+{
+	Super::StartPlay();
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Starting up shooter sampler"));
+	}
+}
