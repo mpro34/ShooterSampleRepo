@@ -3,7 +3,6 @@
 
 #include "ShooterSampleGameModeBase.h"
 #include "ShooterSample.h"
-#include "Engine.h"
 
 void AShooterSampleGameModeBase::StartPlay()
 {
