@@ -40,6 +40,14 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAxis("MoveForward", this, &AMainCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AMainCharacter::MoveRight);
 
+	// Setup the "look" bindings
+	PlayerInputComponent->BindAxis("Turn", this, &AMainCharacter::AddControllerYawInput);
+	PlayerInputComponent->BindAxis("LookUp", this, &AMainCharacter::AddControllerPitchInput);
+
+	// Setup the "action" bindings
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AMainCharacter::StartJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMainCharacter::StopJump);
+
 }
 
 // Called when moving forwards or backwards
@@ -57,5 +65,15 @@ void AMainCharacter::MoveRight(float Value)
 	// Find out which way is "right" and orient player towards that direction.
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
 	AddMovementInput(Direction, Value);
+}
+
+void AMainCharacter::StartJump()
+{
+	bPressedJump = true;
+}
+
+void AMainCharacter::StopJump()
+{
+	bPressedJump = false;
 }
 

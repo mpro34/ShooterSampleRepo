@@ -34,5 +34,12 @@ public:
 	UFUNCTION()
 	void MoveRight(float Value);
 
+	// Sets the jump flag for if a character wants to jump
+	UFUNCTION()
+	void StartJump();
+
+	// Unsets the jump flag when wanting to stop jumping
+	UFUNCTION()
+	void StopJump();
 
 };
