@@ -10,6 +10,15 @@ AMainCharacter::AMainCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Create a first person camera component
+//	MainCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCameraComponent"));
+
+	// Attach the camera component to our capsule component
+//	MainCameraComponent->SetupAttachment(GetCapsuleComponent());
+	// Position the camera slightly above the eyes
+//	MainCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.f + BaseEyeHeight));
+	// Allow the pawn to control camera rotation
+//	MainCameraComponent->bUsePawnControlRotation = true;
 }
 
 // Called when the game starts or when spawned

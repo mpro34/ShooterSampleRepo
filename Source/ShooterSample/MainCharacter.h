@@ -28,18 +28,27 @@ public:
 
 	// Handles input moving forwards and backwards
 	UFUNCTION()
+
 	void MoveForward(float Value);
 
 	// Handles input moving right and left
 	UFUNCTION()
+
 	void MoveRight(float Value);
 
 	// Sets the jump flag for if a character wants to jump
 	UFUNCTION()
+
 	void StartJump();
 
 	// Unsets the jump flag when wanting to stop jumping
 	UFUNCTION()
+
 	void StopJump();
+
+	// TODO: Adding this FPS camera causes a strange build error
+//	UPROPERTY(VisibleAnywhere)
+
+//	UCameraComponent* MainCameraComponent;
 
 };
